@@ -106,6 +106,7 @@ namespace BetterChat
         public static bool deadChat { get; private set; }
 
         public static bool UsePlayerColors;
+        public static bool EnableTypingIndicators = true;
 
         public static readonly List<string> pastMessages = new List<string>();
         public static int currentPastIndex;
@@ -410,6 +411,7 @@ namespace BetterChat
             currentPastIndex = 0;
 
             UsePlayerColors = false;
+            EnableTypingIndicators = true;
             
             CreateGroup("ALL",  new GroupSettings()
             {
