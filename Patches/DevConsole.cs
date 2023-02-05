@@ -13,7 +13,7 @@ namespace BetterChat.Patches
     {
         private static bool Prefix()
         {
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKey(KeyCode.RightShift) && Input.GetKeyDown(KeyCode.Return) && (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)))
             {
                 return true;
             }

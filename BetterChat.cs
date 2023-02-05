@@ -107,6 +107,7 @@ namespace BetterChat
 
         public static bool UsePlayerColors;
         public static bool EnableTypingIndicators = true;
+        public static bool EnableTeamChat = true;
 
         public static readonly List<string> pastMessages = new List<string>();
         public static int currentPastIndex;
@@ -160,7 +161,8 @@ namespace BetterChat
             } );
             CreateGroup("TEAM",  new GroupSettings()
             {
-                receiveMessageCondition = (i, j) => PlayerManager.instance.GetPlayerById(i)?.teamID == PlayerManager.instance.GetPlayerById(j)?.teamID,
+                canSeeGroup = (i) => EnableTeamChat,
+                receiveMessageCondition = (i, j) => EnableTeamChat && PlayerManager.instance.GetPlayerById(i)?.teamID == PlayerManager.instance.GetPlayerById(j)?.teamID,
                 keyBind = KeyCode.Y,
             });
 
@@ -412,15 +414,17 @@ namespace BetterChat
 
             UsePlayerColors = false;
             EnableTypingIndicators = true;
+            EnableTeamChat = true;
             
             CreateGroup("ALL",  new GroupSettings()
             {
                 receiveMessageCondition = (i,j) => true,
                 keyBind = KeyCode.T
-            } );
+            });
             CreateGroup("TEAM",  new GroupSettings()
             {
-                receiveMessageCondition = (i, j) => PlayerManager.instance.GetPlayerById(i)?.teamID == PlayerManager.instance.GetPlayerById(j)?.teamID,
+                canSeeGroup = (i) => EnableTeamChat,
+                receiveMessageCondition = (i, j) => EnableTeamChat && PlayerManager.instance.GetPlayerById(i)?.teamID == PlayerManager.instance.GetPlayerById(j)?.teamID,
                 keyBind = KeyCode.Y
             });
         }
@@ -671,7 +675,7 @@ namespace BetterChat
             }
             
             
-            if (isTyping && !indicatorOn)
+            if (isTyping && !indicatorOn && EnableTypingIndicators)
             {
                 if (PlayerManager.instance.players.Count != 0)
                 {

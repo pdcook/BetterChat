@@ -14,7 +14,7 @@ A new and improved reworked chat
 - Fully customizable chat window
 - Use enter to open and close the window
 - Use up and down arrow to scroll through chat history
-- If you want to open the vanilla chat windows use `left-shift` + `Enter`
+- If you want to open the vanilla chat windows use `control` + `right-shift` + `Enter`
 - This mod can fully be used clientside
 - Global saving of the config
 

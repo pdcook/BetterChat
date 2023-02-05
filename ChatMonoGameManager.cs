@@ -101,6 +101,7 @@ namespace BetterChat
         [PunRPC]
         public void RPCA_ActivateIndicator(int playerViewID)
         {
+            if (!BetterChat.EnableTypingIndicators) { return; }
             var player = PhotonNetwork.GetPhotonView(playerViewID);
             player.transform.Find("WobbleObjects/Typing indicator(Clone)").gameObject.SetActive(true);
 
