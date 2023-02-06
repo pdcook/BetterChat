@@ -19,6 +19,10 @@ A new and improved reworked chat
 - Global saving of the config
 
 ## Patch notes
+
+- v1.2.0
+  - added team chat and idicator options for custom gamemodes
+
 - v1.1.0
   - Added chat groups and chat groups interface
   - Dead chat

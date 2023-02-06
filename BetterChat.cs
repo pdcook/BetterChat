@@ -29,7 +29,7 @@ namespace BetterChat
     {
         private const string ModId = "com.bosssloth.rounds.BetterChat";
         private const string ModName = "BetterChat";
-        public const string Version = "1.1.2";
+        public const string Version = "1.2.0";
 
         internal static AssetBundle chatAsset;
 
